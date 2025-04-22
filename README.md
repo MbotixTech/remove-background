@@ -14,9 +14,9 @@
 
 ## Deskripsi
 
-**Remove Background Web App** adalah aplikasi yang memungkinkan pengguna untuk meng-upload gambar dan secara otomatis menghapus latar belakangnya. Aplikasi ini berjalan di dua platform, yaitu **Web** dan **Telegram Bot**. Aplikasi ini dibangun dengan **HTML**, **CSS**, **JavaScript**, **Python** (untuk proses penghapusan background), dan menggunakan **Node.js** di backend.
+**Remove Background Web App** adalah aplikasi yang memungkinkan pengguna untuk meng-upload gambar dan secara otomatis menghapus latar belakangnya. Aplikasi ini berjalan di dua platform, yaitu **Web** dan **Telegram Bot**. Aplikasi ini dibangun dengan **HTML**, **CSS**, **JavaScript**, **Python** (untuk proses penghapusan background dengan **`rembg`**), dan menggunakan **Node.js** di backend.
 
-Aplikasi ini memungkinkan pengguna untuk melihat hasil gambar yang telah dihapus latar belakangnya, dan mengunduhnya dalam format PNG. Selain itu, pengguna juga dapat menggunakan Telegram Bot untuk menghapus latar belakang gambar dengan cara yang lebih cepat melalui perintah bot di Telegram.
+Proses penghapusan latar belakang dilakukan dengan menjalankan **Python** secara otomatis di server menggunakan **`child_process`** di Node.js. Python akan memanggil **`rembg`** untuk menghapus latar belakang gambar yang di-upload dan hasilnya akan dikembalikan ke pengguna dalam format PNG. Selain itu, pengguna juga dapat menggunakan Telegram Bot untuk menghapus latar belakang gambar dengan cara yang lebih cepat melalui perintah bot di Telegram.
 
 ## Fitur Utama
 - **Upload Gambar**: Pengguna dapat meng-upload gambar untuk menghapus latar belakangnya.
@@ -30,15 +30,21 @@ Aplikasi ini memungkinkan pengguna untuk melihat hasil gambar yang telah dihapus
 - **Frontend**:
   - **HTML**: Struktur dasar dari aplikasi.
   - **CSS**: Styling dan desain responsif menggunakan `flexbox` dan `CSS animations`.
-  - **JavaScript**: Interaksi dinamis dengan halaman, seperti zoom gambar dan penghapusan file setelah proses selesai.
+  - **JavaScript**: Interaksi dinamis dengan halaman, seperti zoom gambar.
   
 - **Backend**:
   - **Node.js & Express**: Server backend untuk menangani upload gambar, proses penghapusan background, dan penghapusan file setelah proses selesai.
-  - **Python**: Menggunakan `rembg` library untuk menghapus latar belakang gambar.
+  - **Python**: Menggunakan **`rembg`** library untuk menghapus latar belakang gambar. Python dijalankan melalui **`child_process`** di Node.js.
   - **Mulitpart Form Data (Multer)**: Digunakan untuk meng-handle upload file di Node.js.
   
 - **Telegram Bot**:
   - **Node.js**: Bot berjalan di platform Telegram untuk menerima gambar dan menghapus latar belakang secara otomatis.
+
+## Cara Kerja
+1. Pengguna meng-upload gambar melalui aplikasi web atau Telegram Bot.
+2. Node.js menerima request dan menggunakan **Python** untuk memanggil **`rembg`** melalui **child process**.
+3. **`rembg`** akan memproses gambar untuk menghapus latar belakang.
+4. Hasilnya disimpan dalam format PNG dan dikirim kembali ke pengguna.
 
 ## Cara Menggunakan
 
