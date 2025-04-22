@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Background - MbotixTech</title>
+  <link rel="icon" href="public/logo.jpg" type="image/jpg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="gradient-bg">
+  <div class="container fade-in">
+    <h1 class="title">Remove Background Secara Otomatis</h1>
+    <p class="subtitle">Upload gambarmu dan dapatkan hasil tanpa background secara otomatis!</p>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required class="file-input">
+      <button type="submit" class="btn">🚀 Upload & Proses</button>
+    </form>
+  </div>
+  <div id="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <p>🌟 Developed by <a href="https://github.com/MbotixTech" target="_blank">MbotixTech</a></p>
+    </div>
+  </footer>
+</body>
+</html>
