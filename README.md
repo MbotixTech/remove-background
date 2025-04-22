@@ -108,7 +108,7 @@ node bot.js
 Jika kamu ingin berkontribusi, silakan buka **issue** atau buat **pull request**. Kami sangat menghargai kontribusi dari komunitas!
 
 ## Lisensi
-Proyek ini dilisensikan di bawah **MIT License**. Lihat file (./LICENSE) untuk detail lebih lanjut.
+Proyek ini dilisensikan di bawah **MIT License**. Lihat file [MIT License](./LICENSE) untuk detail lebih lanjut.
 
 ## Credits
 - [rembg](https://github.com/danielgatis/rembg) - Library Python untuk menghapus latar belakang gambar.
